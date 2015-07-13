@@ -73,7 +73,9 @@
 			
 			// construct a reversed track list
 			$.each(tracks.items, function(i, row) {
-				reversed.uris.push("spotify:track:" + row.track.id);
+				if(row.track.id){
+					reversed.uris.push("spotify:track:" + row.track.id);
+				}
 			});
 			
 			setTracksForPlaylist(g_username, playlistId, reversed, function(resp) {
